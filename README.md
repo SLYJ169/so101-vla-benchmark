@@ -89,7 +89,7 @@
 | Frames | **14,753** |
 | FPS | **30** |
 | Cameras | Front + Wrist |
-| Image | 480×640 |
+| Image (H×W) | 480×640 |
 | State / Action | 6D / 6D |
 
 数据来自多位置遥操作。录制后逐条检查 episode，删除不合格数据并补录至 50 条，之后冻结数据版本，三种模型均使用同一份数据。
