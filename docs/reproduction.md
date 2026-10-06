@@ -1,16 +1,14 @@
 # 复现说明
 
-本仓库用于记录完整工程链路，但不会直接发布大体积 checkpoint 与全部原始视频。
-
 ## 1. 硬件
 
-准备 SO-101 Leader/Follower：
+SO-101 Leader/Follower：
 
-- Leader 5 V
-- Follower 12 V
+- Leader：5 V
+- Follower：12 V
 - Front + Wrist 双相机
 - 640×480 @ 30 FPS
-- 建议使用稳定 `/dev/serial/by-id/` 与 `/dev/v4l/by-id/` 路径
+- 建议使用 `/dev/serial/by-id/` 与 `/dev/v4l/by-id/` 固定设备路径
 
 ## 2. 数据
 
@@ -20,7 +18,7 @@
 Pick up the red object and place it into the box.
 ~~~
 
-本项目冻结数据集：
+Final50：
 
 - 50 episodes
 - 14,753 frames
@@ -29,7 +27,7 @@ Pick up the red object and place it into the box.
 
 ## 3. 训练
 
-核心配置位于：
+配置文件：
 
 - `configs/act.yaml`
 - `configs/smolvla.yaml`
@@ -42,13 +40,11 @@ Pick up the red object and place it into the box.
 
 ## 4. Checkpoint Selection
 
-不要只看 training loss。ACT 100k loss 更低但真机不如 80k，是本项目中最直接的例子。
+Checkpoint 选择以真机 rollout 为准。ACT 的正式 checkpoint 为 80k；SmolVLA 为 20k；π0.5 为 6000 updates / dir 5999。
 
 ## 5. 真机评测
 
-每个模型执行 20 次自动任务，并记录最终是否完成放置。
-
-本仓库首页只展示 Final Completion。
+每个模型执行 20 次自动任务，以最终是否将目标放入盒子作为成功判据。
 
 ## 6. π0.5 部署
 
@@ -62,4 +58,4 @@ Front + Wrist
 → re-observe / replan
 ~~~
 
-正式 Benchmark 不加入 clipping、smoothing 或 RTC/async。
+正式 Benchmark 未加入 clipping、smoothing 或 RTC/async。
