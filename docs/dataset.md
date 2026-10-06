@@ -8,7 +8,7 @@ Final50 是 P1 三个模型统一使用的冻结数据集。
 - 14,753 frames
 - 30 FPS
 - Front + Wrist 双相机
-- 图像 480×640
+- 图像（H×W）480×640
 - state = 6D
 - action = 6D
 - robot_type = SO-101 follower
