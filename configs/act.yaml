@@ -1,0 +1,23 @@
+model: ACT
+framework: LeRobot
+dataset: Final50
+task: "Pick up the red object and place it into the box."
+
+training:
+  total_steps: 100000
+  batch_size: 8
+  num_workers: 4
+  save_every_steps: 20000
+  checkpoints: [20000, 40000, 60000, 80000, 100000]
+
+selection:
+  formal_checkpoint: 80000
+  criterion: real_robot_rollout
+  note: "100k reached lower training loss, but 80k performed better on the robot."
+
+hardware:
+  training_gpu: "RTX 3060 Laptop 6GB"
+
+benchmark:
+  trials: 20
+  final_completion: "15/20"

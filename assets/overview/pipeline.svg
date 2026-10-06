@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="230" viewBox="0 0 1100 230">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#1f2937}.h{font-size:22px;font-weight:700}.s{font-size:15px}.box{fill:#f8fafc;stroke:#64748b;stroke-width:2}.arrow{stroke:#64748b;stroke-width:3;fill:none;marker-end:url(#a)}
+</style>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+<rect width="1100" height="230" fill="white"/>
+<text x="550" y="34" text-anchor="middle" class="h">End-to-End Real-Robot Learning Pipeline</text>
+<g transform="translate(30,75)">
+<rect class="box" x="0" y="0" rx="12" width="150" height="90"/><text x="75" y="35" text-anchor="middle" class="h">Teleoperation</text><text x="75" y="62" text-anchor="middle" class="s">SO-101 leader → follower</text>
+<path class="arrow" d="M155 45 H205"/>
+<rect class="box" x="210" y="0" rx="12" width="150" height="90"/><text x="285" y="35" text-anchor="middle" class="h">Final50</text><text x="285" y="62" text-anchor="middle" class="s">50 eps · 14,753 frames</text>
+<path class="arrow" d="M365 45 H415"/>
+<rect class="box" x="420" y="0" rx="12" width="180" height="90"/><text x="510" y="35" text-anchor="middle" class="h">Train / Fine-tune</text><text x="510" y="62" text-anchor="middle" class="s">ACT · SmolVLA · π0.5</text>
+<path class="arrow" d="M605 45 H655"/>
+<rect class="box" x="660" y="0" rx="12" width="170" height="90"/><text x="745" y="35" text-anchor="middle" class="h">Real Robot</text><text x="745" y="62" text-anchor="middle" class="s">20-trial evaluation</text>
+<path class="arrow" d="M835 45 H885"/>
+<rect class="box" x="890" y="0" rx="12" width="170" height="90"/><text x="975" y="35" text-anchor="middle" class="h">Analysis</text><text x="975" y="58" text-anchor="middle" class="s">failure modes · OOD</text>
+</g>
+</svg>

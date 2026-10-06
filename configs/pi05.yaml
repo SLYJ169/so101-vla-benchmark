@@ -1,0 +1,36 @@
+model: pi0.5
+framework: OpenPI / JAX
+base_model: pi05_base
+fine_tuning: full_parameter
+dataset: Final50
+task: "Pick up the red object and place it into the box."
+
+training:
+  gpu: "1x NVIDIA H800 80GB"
+  batch_size: 32
+  action_horizon: 50
+  total_updates: 6000
+  final_checkpoint_dir: 5999
+  optimizer: AdamW
+  beta1: 0.9
+  beta2: 0.95
+  eps: 1.0e-8
+  weight_decay: 1.0e-10
+  grad_clip: 1.0
+  lr_peak: 2.5e-5
+  lr_final: 2.5e-6
+  warmup_steps: 200
+  schedule: cosine
+  ema: 0.999
+
+deployment:
+  policy_server: remote_H800
+  transport: WebSocket_over_SSH_tunnel
+  control_hz: 30
+  execute_actions_per_replan: 25
+  rtc_async: false
+
+benchmark:
+  trials: 20
+  final_completion: "19/20"
+  formal_run: second_clean_run

@@ -1,0 +1,25 @@
+model: SmolVLA
+framework: LeRobot
+base_model: lerobot/smolvla_base
+dataset: Final50
+task: "Pick up the red object and place it into the box."
+
+training:
+  total_steps: 20000
+  batch_size: 32
+  num_workers: 4
+  seed: 1000
+  use_amp: false
+  save_every_steps: 5000
+  checkpoints: [5000, 10000, 15000, 20000]
+  training_time: "~1h34m"
+
+camera_mapping:
+  front: camera1
+  wrist: camera2
+  empty_cameras: 1
+
+benchmark:
+  formal_checkpoint: 20000
+  trials: 20
+  final_completion: "17/20"

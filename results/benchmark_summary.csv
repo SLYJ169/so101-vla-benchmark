@@ -1,0 +1,4 @@
+model,checkpoint,final_completion,total_trials,success_rate
+ACT,80k,15,20,0.75
+SmolVLA,20k,17,20,0.85
+pi0.5,6000_updates_dir_5999,19,20,0.95

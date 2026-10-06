@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Local robot data / checkpoints
+data/
+datasets/
+checkpoints/
+outputs/
+runs/
+logs/
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+
+# Large raw media
+raw_media/
+*.avi
